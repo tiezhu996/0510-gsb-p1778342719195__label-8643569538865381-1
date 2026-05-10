@@ -16,4 +16,7 @@ public class Course {
 
     @Column(name = "teacher_id")
     private Long teacherId;
+
+    @Column(name = "class_name")
+    private String className;
 }
