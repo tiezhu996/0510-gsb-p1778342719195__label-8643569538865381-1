@@ -19,6 +19,11 @@ public class CourseController {
         return courseService.getAllCourses();
     }
 
+    @GetMapping("/class/{className}")
+    public List<Course> getCoursesByClass(@PathVariable String className) {
+        return courseService.getCoursesByClassName(className);
+    }
+
     @PostMapping
     public Course createCourse(@RequestBody Course course) {
         return courseService.createCourse(course);
