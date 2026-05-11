@@ -257,8 +257,9 @@ const fetchData = async () => {
     courses.value = coursesRes
     students.value = usersRes.filter(u => u.role === 'STUDENT')
     
-    // If teacher, filter courses they teach
-    if (['TEACHER', 'HEAD_TEACHER'].includes(userStore.role)) {
+    // If teacher (not head teacher), filter courses they teach
+    // Head teachers can see all courses to manage their class
+    if (userStore.role === 'TEACHER') {
         courses.value = coursesRes.filter(c => c.teacherId === userStore.user.id)
     }
     
