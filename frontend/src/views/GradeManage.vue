@@ -240,15 +240,17 @@ const fetchData = async () => {
   loading.value = true
   try {
     let gradesUrl = '/grades'
+    let coursesUrl = '/courses'
     if (userStore.role === 'TEACHER') {
         gradesUrl = `/grades/teacher/${userStore.user.id}`
     } else if (userStore.role === 'HEAD_TEACHER' && userStore.user.className) {
         gradesUrl = `/grades/class/${userStore.user.className}`
+        coursesUrl = `/courses/class/${userStore.user.className}`
     }
     
     const [gradesRes, coursesRes, usersRes] = await Promise.all([
         request.get(gradesUrl),
-        request.get('/courses'),
+        request.get(coursesUrl),
         request.get('/users')
     ])
     
@@ -258,11 +260,11 @@ const fetchData = async () => {
     students.value = usersRes.filter(u => u.role === 'STUDENT')
     
     // If teacher, filter courses they teach
-    if (['TEACHER', 'HEAD_TEACHER'].includes(userStore.role)) {
+    if (userStore.role === 'TEACHER') {
         courses.value = coursesRes.filter(c => c.teacherId === userStore.user.id)
     }
     
-    // If head teacher, filter students to their class for dropdown
+    // If head teacher, filter students to their class
     if (userStore.role === 'HEAD_TEACHER' && userStore.user.className) {
         students.value = students.value.filter(s => s.className === userStore.user.className)
     }

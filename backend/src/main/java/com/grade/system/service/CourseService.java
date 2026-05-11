@@ -16,6 +16,10 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    public List<Course> getCoursesByClassName(String className) {
+        return courseRepository.findByClassName(className);
+    }
+
     public Course createCourse(Course course) {
         return courseRepository.save(course);
     }
@@ -24,6 +28,7 @@ public class CourseService {
         Course course = courseRepository.findById(id).orElseThrow(() -> new RuntimeException("Course not found"));
         course.setName(courseDetails.getName());
         course.setTeacherId(courseDetails.getTeacherId());
+        course.setClassName(courseDetails.getClassName());
         return courseRepository.save(course);
     }
 
