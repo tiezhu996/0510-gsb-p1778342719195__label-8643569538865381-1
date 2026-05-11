@@ -16,6 +16,7 @@
                 {{ getTeacherName(scope.row.teacherId) }}
              </template>
         </el-table-column>
+        <el-table-column prop="className" label="所属班级" />
         <el-table-column label="操作" width="180">
           <template #default="scope">
             <el-button size="small" @click="handleEdit(scope.row)">编辑</el-button>
@@ -37,6 +38,16 @@
               :key="item.id"
               :label="item.name"
               :value="item.id"
+            />
+          </el-select>
+        </el-form-item>
+        <el-form-item label="所属班级">
+          <el-select v-model="form.className" placeholder="请选择班级" clearable>
+            <el-option
+              v-for="item in classOptions"
+              :key="item"
+              :label="item"
+              :value="item"
             />
           </el-select>
         </el-form-item>
@@ -65,8 +76,11 @@ const dialogTitle = ref('')
 const form = reactive({
   id: null,
   name: '',
-  teacherId: null
+  teacherId: null,
+  className: null
 })
+
+const classOptions = ref([])
 
 const getTeacherName = (id) => {
     const teacher = teachers.value.find(t => t.id === id)
@@ -82,6 +96,8 @@ const fetchData = async () => {
     ])
     tableData.value = coursesRes
     teachers.value = usersRes.filter(u => ['TEACHER', 'HEAD_TEACHER'].includes(u.role))
+    const studentClasses = usersRes.filter(u => u.role === 'STUDENT' && u.className).map(u => u.className)
+    classOptions.value = [...new Set(studentClasses)]
   } finally {
     loading.value = false
   }
@@ -92,7 +108,8 @@ const handleAdd = () => {
   Object.assign(form, {
     id: null,
     name: '',
-    teacherId: null
+    teacherId: null,
+    className: null
   })
   dialogVisible.value = true
 }

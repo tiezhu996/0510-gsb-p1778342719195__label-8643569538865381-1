@@ -1,0 +1,16 @@
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/entity/User.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/controller/UserController.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/dto/LoginResponse.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/controller/GradeController.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/dto/LoginRequest.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/repository/CourseRepository.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/entity/Course.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/controller/AuthController.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/repository/UserRepository.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/service/GradeService.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/service/UserService.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/GradeSystemApplication.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/entity/Grade.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/controller/CourseController.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/repository/GradeRepository.java
+/Users/yu/仓库/审核任务/0510-gsb/B-211-bug修复-1/TestM_2/backend/src/main/java/com/grade/system/service/CourseService.java
