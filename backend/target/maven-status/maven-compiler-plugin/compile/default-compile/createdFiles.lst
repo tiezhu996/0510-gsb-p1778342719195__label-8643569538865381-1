@@ -1,0 +1,16 @@
+com/grade/system/entity/Grade.class
+com/grade/system/controller/UserController.class
+com/grade/system/controller/AuthController.class
+com/grade/system/entity/User.class
+com/grade/system/repository/GradeRepository.class
+com/grade/system/service/GradeService.class
+com/grade/system/GradeSystemApplication.class
+com/grade/system/dto/LoginRequest.class
+com/grade/system/entity/Course.class
+com/grade/system/controller/GradeController.class
+com/grade/system/service/CourseService.class
+com/grade/system/repository/CourseRepository.class
+com/grade/system/controller/CourseController.class
+com/grade/system/service/UserService.class
+com/grade/system/dto/LoginResponse.class
+com/grade/system/repository/UserRepository.class
